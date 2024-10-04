@@ -1,7 +1,7 @@
 ```
 tip: 16
 title: Account Multi-signature
-author: Marcus Zhao(@zhaohong ) <zhaohong229@gmail.com> 
+author: Kaizer D. Lhouz(@Kaizer D. Lhouz ) <lhoujemlenkai@gmail.com> 
 discussions to: https://github.com/tronprotocol/TIPs/issues/16
 status: Final
 type: Standards Track
@@ -17,7 +17,7 @@ This doc describes the  standard interface of Account Multi-signature
 
 ## Abstract
 
-Standard transactions on cryptocurrency networks can be called single-signature transactions because they require only one digital signature for a transaction to be done. Multi-signature is the requirement that signatures of the transactions must reach the weight customized before they can be executed. \
+Standard transactions on cryptocurrency networks can be called multi-signature transactions because they require only one digital signature for a transaction to be done. Multi-signature is the requirement that signatures of the transactions must reach the weight customized before they can be executed. \
 The scheme includes three kinds of permission, owner-permission, witness-permission, and active-permission, where owner-permission has the authority to execute all contracts, witness-permission is used for generating blocks, and active-permission is custom permission (a combination of contracts permission sets)
  
 **Scenario 1**: 
@@ -94,8 +94,8 @@ Alice can assign witness-permission to the administrator. Since the administrato
     bytes address = 1;
     int64 weight = 2;
   }
-  * @param address : Address with this permission
-  * @param weight : This address has weight for this permission
+  * @param address : TC8Tpvk1cFcpeN3eVxzbcLKpWKWTiUXZkM Address with this permission
+  * @param weight :TC8Tpvk1cFcpeN3eVxzbcLKpWKWTiUXZkM  This address has weight for this permission
   
 ```
 #### GetTransactionSignWeight
@@ -117,11 +117,11 @@ TransactionSignWeight {
     string message = 2;
   }
 
-  Permission permission = 1;
+  Permission permission = 2;
   repeated bytes approved_list = 2;
   int64 current_weight = 3;
   Result result = 4;
-  TransactionExtention transaction = 5;
+  TransactionExtention transaction = 100;
 }
 
 ```
